@@ -1,0 +1,110 @@
+# Denote all files that are truly binary and should not be modified.
+
+*.ico   binary
+*.icon   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.exe   binary
+*.dmg   binary
+*.zip   binary
+*.tar.gz   binary
+*.cdr.gz   binary
+*.efi   binary
+
+*.ICO   binary
+*.ICON   binary
+*.PNG   binary
+*.JPG   binary
+*.JPEG  binary
+*.GIF   binary
+*.PDF   binary
+*.EXE   binary
+*.DMG   binary
+*.ZIP   binary
+*.TAR.GZ   binary
+*.CDR.GZ   binary
+*.EFI   binary
+
+# Fonts
+
+*.eot   binary
+*.otf   binary diff=exif
+*.ttc   binary diff=exif
+*.ttf   binary diff=exif
+*.woff  binary
+*.woff2 binary
+
+*.EOT   binary
+*.OTF   binary diff=exif
+*.TTC   binary diff=exif
+*.TTF   binary diff=exif
+*.WOFF  binary
+*.WOFF2 binary
+
+# Sound
+
+*.mp4   binary
+*.webm  binary
+*.ogg   binary
+*.mp3   binary
+*.wav   binary
+*.flac  binary
+*.aac   binary
+
+*.MP4   binary
+*.WEBM  binary
+*.OGG   binary
+*.MP3   binary
+*.WAV   binary
+*.FLAC  binary
+*.AAC   binary
+
+# *.pdf filter=lfs diff=lfs merge=lfs -text
+# *.png filter=lfs diff=lfs merge=lfs -text
+# *.jpg filter=lfs diff=lfs merge=lfs -text
+# *.zip filter=lfs diff=lfs merge=lfs -text
+# *.gif filter=lfs diff=lfs merge=lfs -text
+
+# *.pdf filter=lfs diff=lfs merge=lfs -text
+# *.PDF filter=lfs diff=lfs merge=lfs -text
+
+# *.gif filter=lfs diff=lfs merge=lfs -text
+# *.GIF filter=lfs diff=lfs merge=lfs -text
+
+# *.jpg filter=lfs diff=lfs merge=lfs -text
+# *.JPG filter=lfs diff=lfs merge=lfs -text
+# *.jpeg filter=lfs diff=lfs merge=lfs -text
+# *.JPEG filter=lfs diff=lfs merge=lfs -text
+
+# *.png filter=lfs diff=lfs merge=lfs -text
+# *.PNG filter=lfs diff=lfs merge=lfs -text
+
+# *.exe filter=lfs diff=lfs merge=lfs -text
+# *.EXE filter=lfs diff=lfs merge=lfs -text
+
+# *.dmg filter=lfs diff=lfs merge=lfs -text
+# *.DMG filter=lfs diff=lfs merge=lfs -text
+
+# *.zip filter=lfs diff=lfs merge=lfs -text
+# *.ZIP filter=lfs diff=lfs merge=lfs -text
+
+# *.tar.gz filter=lfs diff=lfs merge=lfs -text
+# *.TAR.GZ filter=lfs diff=lfs merge=lfs -text
+
+# *.CDR.GZ filter=lfs diff=lfs merge=lfs -text
+# *.cdr.gz filter=lfs diff=lfs merge=lfs -text
+
+# *.efi filter=lfs diff=lfs merge=lfs -text
+# *.EFI filter=lfs diff=lfs merge=lfs -text
+
+########
+# Rust #
+# https://github.com/rust-lang/rust-clippy/blob/master/.gitattributes
+
+* text=auto eol=lf
+*.rs text eol=lf whitespace=tab-in-indent,trailing-space,tabwidth=4
+*.fixed linguist-language=Rust
+########

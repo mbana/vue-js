@@ -1,0 +1,55 @@
+[user]
+  name = Mohamed Bana
+  email = m@bana.io
+[core]
+  excludesfile = ~/.gitignore
+  editor = code --wait --new-window --disable-extensions
+  pager = cat
+  ignorecase = false
+  # hideDotFiles = true
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[alias]
+  c = checkout
+  cb = checkout -b
+  cf = checkout --
+  cl = checkout -
+  cm = commit -m
+  d = diff --word-diff=color
+  dc = diff --cached --word-diff=color
+  mod = "!git --no-pager diff --name-only"
+  mod-status = "!git --no-pager diff --name-status"
+  dc = diff --cached
+  s = status --branch
+  # s = status --short --branch
+  b = branch
+  bc = rev-parse --abbrev-ref HEAD
+  p = push
+  r = reset HEAD
+  last = "!git --no-pager log -1 --color"
+  lg = "!git log --pretty='format:%C(yellow)commit %H%n%C(white)Author: %an <%ae>%nDate:   %ad%n%n%B%n' --color=always develop..\"$(git rev-parse --abbrev-ref HEAD)\""
+[color]
+  ui = true
+  advice = true
+status = always
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = magenta bold
+[color "status"]
+  unmerged  = yellow reverse
+# [column]
+# # 	ui = always
+#     status = always
+[credential]
+  helper = cache --timeout=3600

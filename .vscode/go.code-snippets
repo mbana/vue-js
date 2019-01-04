@@ -1,0 +1,353 @@
+{
+  "add-package-name-and-init-method": {
+    "prefix": [
+      "go-add-package-name-and-init-method",
+      "gapbaim"
+    ],
+    "scope": "go",
+    "body": [
+      "package ${TM_DIRECTORY/^.+\\/(.)(.*)$/$1$2/}",
+      "",
+      "import (",
+      "  \"fmt\"",
+      ")",
+      "",
+      "func init() {",
+      "  fmt.Printf(\"Func='%#+v'\\\\n\", \"${TM_DIRECTORY/^.+\\/(.)(.*)$/${1:/upcase}$2/}\")",
+      "",
+      "\t${0}",
+      "}",
+      ""
+    ],
+    "description": "Add package to file and init method"
+  },
+  "if-err-not-nil-with-else-if-value-not-nil": {
+    "prefix": [
+      "go-if-err-not-nil-with-else-if-value-not-nil",
+      "giennweivnn"
+    ],
+    "scope": "go",
+    "body": [
+      "if err != nil {",
+      "\tfmt.Fprintf(os.Stderr, \"error:  call to ${1:func_name} errored  - ${2:func_call_result_variable_name}=%#+v, err=%#+v\\n\", ${2:func_call_result_variable_name}, err)",
+      "} else if ${2:func_call_result_variable_name} == nil {",
+      "\tfmt.Fprintf(os.Stderr, \"error: call to ${1:func_name} returned nil - ${2:func_call_result_variable_name}=%#+v\\n\", ${2:func_call_result_variable_name})",
+      "}",
+      "",
+      "$0"
+    ],
+    "description": "Snippet for checking if err is nil or `val` is nil in a call to, say, `\tvar val interface{} = nil\r\n\tbytes, err := json.Marshal(val)\r\n\tif err != nil {\r\n\t\tfmt.Fprintf(os.Stderr, \"error: json.Marshal(val=%#+v) returned an error - bytes=%#+v, err=%#+v\\n\", val, bytes, err)\r\n\t} else if val == nil {\r\n\t\tfmt.Fprintf(os.Stderr, \"error: json.Marshal(val=%#+v) did not populate val - bytes=%#+v\\n\", val, bytes)\r\n\t}`"
+  },
+  "new-constructor": {
+    "prefix": [
+      "go-new-constructor",
+      "gnc"
+    ],
+    "scope": "go",
+    "body": [
+      "// New${1:Type} ${4|\u200B,...|}.",
+      "func New${1:Type}($2) *$1 {",
+      "  return &$1{",
+      "    $3",
+      "  }",
+      "}",
+      "",
+      "${0}"
+    ],
+    "description": "New constructor"
+  },
+  "go-new-constructor-and-struct": {
+    "prefix": [
+      "go-new-constructor-and-struct",
+      "gncas"
+    ],
+    "scope": "go",
+    "body": [
+      "// ${1:Type} ${2:...}",
+      "type ${1:Name} struct {",
+      "  ${0}",
+      "}",
+      "",
+      "// New${1:Type} constructor for ${1:Type}",
+      "func New${1:Type}() *$1 {",
+      "  return &$1{",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "New constructor and struct"
+  },
+  "go-const-error-type": {
+    "prefix": [
+      "go-const-error-type",
+      "gcet"
+    ],
+    "scope": "go",
+    "body": [
+      "// ${1:Type}Error ...",
+      "type ${1:Type}Error string",
+      "",
+      "// Error ...",
+      "func (e ${1:Type}Error) Error() string {",
+      "  return string(e)",
+      "}",
+      "",
+      "const (",
+      "  // Err${2:Name} ...",
+      "  Err${2:Name} = ${1:Type}Error(\"error: ${3:Err${2:Name}}\")",
+      ")",
+      ""
+    ],
+    "description": "Const \\`error\\` type"
+  },
+  "struct-field": {
+    "prefix": [
+      "go-struct-field",
+      "gsf"
+    ],
+    "scope": "go",
+    "body": [
+      "// $1 ${4|\u200B,...|}.",
+      "${1:FieldName} ${2:Type}$0"
+    ],
+    "description": "Struct field"
+  },
+  "struct-field-tag": {
+    "prefix": [
+      "go-struct-field-tag",
+      "gsft"
+    ],
+    "scope": "go",
+    "body": [
+      "`${1:tag_name}:\"${1:/downcase}\"`$0"
+    ],
+    "description": "Struct generic tag field"
+  },
+  "struct-field-with-json-tag": {
+    "prefix": [
+      "go-struct-field-with-json-tag",
+      "gsfj"
+    ],
+    "scope": "go",
+    "body": [
+      "// $1 ${4|\u200B,...|}.",
+      "${1:FieldName} ${2:Type} `json:\"${1/(.*)/${1:/downcase}/}${3|\",\\,|}`${0}"
+    ],
+    "description": "Struct JSON field"
+  },
+  "struct-field-with-yaml-tag": {
+    "prefix": [
+      "go-struct-field-with-yaml-tag",
+      "gsfy"
+    ],
+    "scope": "go",
+    "body": [
+      "// $1 ${4|\u200B,...|}.",
+      "${1:FieldName} ${2:Type} `yaml:\"${1/(.*)/${1:/downcase}/}${3|\",\\,|}`${0}"
+    ],
+    "description": "Struct YAML field"
+  },
+  "new-test-function-with-stretchr-testify-require": {
+    "prefix": [
+      "go-new-test-function-with-stretchr-testify-require",
+      "gntfwstr"
+    ],
+    "scope": "go",
+    "body": [
+      "",
+      "import (",
+      "  \"testing\"",
+      "  \"github.com/stretchr/testify/require\"",
+      ")",
+      "",
+      "func Test_${TM_DIRECTORY/^.+\\/(.*)$/$1/}_${2:FuncName}(t *testing.T) {",
+      "  ${1|require := require.New(t),t.Parallel()\nrequire := require.New(t)|}",
+      "",
+      "  require.Equal(true, false, \"TODO(${3:NO_ASSIGNEE_FOR_TODO}): ${2:FuncName} intentional failure as it needs implementing\")",
+      "}",
+      "",
+      "$0"
+    ],
+    "description": "Test func using `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-equal": {
+    "prefix": [
+      "go-testify-require-equal",
+      "gtre"
+    ],
+    "scope": "go",
+    "body": [
+      "require.Equal(${1:expected}, ${2:actual})",
+      "$0"
+    ],
+    "description": "require.Equal `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-noerror": {
+    "prefix": [
+      "go-testify-require-noerror",
+      "gtrn"
+    ],
+    "scope": "go",
+    "body": [
+      "require.NoError(${1:err})",
+      "$0"
+    ],
+    "description": "require.NoError `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-notnil": {
+    "prefix": [
+      "go-stretchr-testify-require-notnil",
+      "gstrnn"
+    ],
+    "scope": "go",
+    "body": [
+      "require.NotNil(${1:result})",
+      "$0"
+    ],
+    "description": "require.NotNil `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-notnilf": {
+    "prefix": [
+      "go-stretchr-testify-require-notnilf",
+      "gstrnnf"
+    ],
+    "scope": "go",
+    "body": [
+      "require.NotNilf(${1:result}, \"testing.t.Name()=%#+v, ${1:result}=%s\", t.Name(), ${1:result})",
+      "$0"
+    ],
+    "description": "require.NotNilf `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-equalerror": {
+    "prefix": [
+      "go-stretchr-testify-require-equalerror",
+      "gstree"
+    ],
+    "scope": "go",
+    "body": [
+      "require.EqualError(${1:actual_error}, `${0:expected_error_string}`)",
+      "$0"
+    ],
+    "description": "require.EqualError `github.com/stretchr/testify/require`"
+  },
+  "stretchr-testify-require-noerror-and-stretchr-testify-require-notnil": {
+    "prefix": [
+      "go-stretchr-testify-require-noerror-and-stretchr-testify-require-notnil",
+      "gstrneastrnn"
+    ],
+    "scope": "go",
+    "body": [
+      "require.NoError(${1:err})",
+      "require.NotNil(${2:result})",
+      "$0"
+    ],
+    "description": "require.NoError and require.NotNil `github.com/stretchr/testify/require`"
+  },
+  "new-test-function-with-stretchr-testify-assert": {
+    "prefix": [
+      "go-new-test-function-with-stretchr-testify-assert",
+      "gntfwsta"
+    ],
+    "scope": "go",
+    "body": [
+      "",
+      "import (",
+      "  \"testing\"",
+      "  \"github.com/stretchr/testify/assert\"",
+      ")",
+      "",
+      "func Test_${TM_DIRECTORY/^.+\\/(.*)$/$1/}_${2:FuncName}(t *testing.T) {",
+      "  ${1|assert := assert.New(t),t.Parallel()\nassert := assert.New(t)|}",
+      "",
+      "  assert.Equal(true, false, \"TODO(${3:NO_ASSIGNEE_FOR_TODO}): ${2:FuncName} intentional failure as it needs implementing\")",
+      "}",
+      "",
+      "$0"
+    ],
+    "description": "Test func `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-equal": {
+    "prefix": [
+      "go-testify-assert-equal",
+      "gtae"
+    ],
+    "scope": "go",
+    "body": [
+      "assert.Equal(${1:expected}, ${2:actual})",
+      "$0"
+    ],
+    "description": "assert.Equal `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-noerror": {
+    "prefix": [
+      "go-testify-assert-noerror",
+      "gtane"
+    ],
+    "scope": "go",
+    "body": [
+      "assert.NoError(${1:err})",
+      "$0"
+    ],
+    "description": "assert.NoError `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-notnil": {
+    "prefix": [
+      "go-stretchr-testify-assert-notnil",
+      "gstann"
+    ],
+    "body": [
+      "assert.NotNil(${1:result})",
+      "$0"
+    ],
+    "description": "assert.NotNil `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-notnilf": {
+    "prefix": [
+      "go-stretchr-testify-assert-notnilf",
+      "gstann"
+    ],
+    "scope": "go",
+    "body": [
+      "assert.NotNilf(${1:result}, \"testing.t.Name()=%#+v, ${1:result}=%s\", t.Name(), ${1:result})",
+      "$0"
+    ],
+    "description": "assert.NotNilf `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-equalerror": {
+    "prefix": [
+      "go-stretchr-testify-assert-equalerror",
+      "gstaee"
+    ],
+    "scope": "go",
+    "body": [
+      "assert.EqualError(${1:actual_error}, `${0:expected_error_string}`)",
+      "$0"
+    ],
+    "description": "assert.EqualError `github.com/stretchr/testify/assert`"
+  },
+  "stretchr-testify-assert-noerror-and-stretchr-testify-assert-notnil": {
+    "prefix": [
+      "go-stretchr-testify-assert-noerror-and-stretchr-testify-assert-notnil",
+      "gstanastan"
+    ],
+    "scope": "go",
+    "body": [
+      "assert.NoError(${1:err})",
+      "assert.NotNil(${2:result})",
+      "$0"
+    ],
+    "description": "assert.NoError and assert.NotNil `github.com/stretchr/testify/assert`"
+  },
+  "testing.skipf": {
+    "prefix": [
+      "go-testing.skipf",
+      "gtf"
+    ],
+    "scope": "go",
+    "body": [
+      "t.Skipf(\"Skipping: testing.t.Name()='%#+v', reason='TODO(${1:NO_ASSIGNEE_FOR_TODO}): needs implementing'\\n\", t.Name())",
+      "$0"
+    ],
+    "description": "t.Skipf() with testing.t.Name() inserted and a TODO"
+  }
+}

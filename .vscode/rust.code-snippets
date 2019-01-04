@@ -1,0 +1,10 @@
+{
+  "rust-func": {
+    "prefix": "rust-func",
+    "scope": "rust",
+    "body": [
+      "TODO"
+    ],
+    "description": "rust-func"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "markdown-link-code": {
+    "prefix": [
+      "markdown-link-code",
+      "mlc"
+    ],
+    "scope": "markdown",
+    "body": [
+      "* [`./$1`](./$1)."
+    ],
+    "description": "markdown-link-code"
+  },
+  "markdown-link-title": {
+    "prefix": [
+      "markdown-link-title",
+      "mlt"
+    ],
+    "scope": "markdown",
+    "body": [
+      "* [$1]($2)."
+    ],
+    "description": "markdown-title"
+  },
+  "markdown-shellscript-block": {
+    "prefix": [
+      "markdown-fenced-block",
+      "mfb"
+    ],
+    "scope": "markdown",
+    "body": [
+      "````${1:bash}",
+      "${2:$} ${3}",
+      "${4}",
+      "```",
+      "",
+      "$0"
+    ],
+    "description": "A Markdown fenced code blocks, see https://github.github.com/gfm/#fenced-code-blocks"
+  }
+}

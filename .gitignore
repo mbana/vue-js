@@ -1,0 +1,399 @@
+# To to see if a file is ignored use this command:
+# $ git check-ignore -v filename
+#
+# See:
+# * https://stackoverflow.com/a/12168102/241993
+# * https://stackoverflow.com/questions/12144633/explain-which-gitignore-rule-is-ignoring-my-file
+# * https://git-scm.com/docs/git-check-ignore
+
+#######################################################################################################################
+# Mac shite
+/**/.DS_Store
+/**/.DS_Store/
+/**/.DS_Store/*
+/**/.DS_Store/**
+/**/.DS_Store/**/*
+
+./**/.DS_Store
+./**/.DS_Store/
+./**/.DS_Store/*
+./**/.DS_Store/**
+./**/.DS_Store/**/*
+
+#######################################################################################################################
+# Ignore the `.ignore/` folder
+/**/.ignore
+/**/.ignore/
+/**/.ignore/*
+/**/.ignore/**
+/**/.ignore/**/*
+
+./**/.ignore
+./**/.ignore/
+./**/.ignore/*
+./**/.ignore/**
+./**/.ignore/**/*
+########################################################################################################################
+
+#######################################################################################################################
+# Ignore the `.ignore/` folder
+/**/.ignore
+/**/.ignore/
+/**/.ignore/*
+/**/.ignore/**
+/**/.ignore/**/*
+
+./**/.ignore
+./**/.ignore/
+./**/.ignore/*
+./**/.ignore/**
+./**/.ignore/**/*
+########################################################################################################################
+
+########################################################################################################################
+# Ignore log files and out files
+/**/*.out
+/**/*.log
+########################################################################################################################
+
+#######################################################################################################################
+# Ignore binaries from running go build
+# /main
+/**/main
+/**/main.out
+#######################################################################################################################
+
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi zsh >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/zsh
+# Edit at https://www.toptal.com/developers/gitignore?templates=zsh
+
+### Zsh ###
+# Zsh compiled script + zrecompile backup
+*.zwc
+*.zwc.old
+
+# Zsh completion-optimization dumpfile
+*zcompdump*
+
+# Zsh zcalc history
+.zcalc_history
+
+# A popular plugin manager's files
+._zplugin
+.zplugin_lstupd
+
+# zdharma/zshelldoc tool's files
+zsdoc/data
+
+# robbyrussell/oh-my-zsh/plugins/per-directory-history plugin's files
+# (when set-up to store the history in the local directory)
+.directory_history
+
+# MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
+# (for Zsh plugins using Python)
+.venv
+
+# Zunit tests' output
+/tests/_output/*
+!/tests/_output/.gitkeep
+
+# End of https://www.toptal.com/developers/gitignore/api/zsh
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi linux >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# End of https://www.toptal.com/developers/gitignore/api/linux
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# gi list | xargs -d',' -n1 echo
+# $ gi macos >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# End of https://www.toptal.com/developers/gitignore/api/macos
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi node >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/node
+# Edit at https://www.toptal.com/developers/gitignore?templates=node
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Commented out due to error:
+# 188:1: "a[b]" must be followed by =
+# # Diagnostic reports (https://nodejs.org/api/report.html)
+# report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# End of https://www.toptal.com/developers/gitignore/api/node
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi yarn >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=yarn
+
+### yarn ###
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+
+# .yarn/unplugged and .yarn/build-state.yml should likely always be ignored since
+# they typically hold machine-specific build artifacts. Ignoring them might however
+# prevent Zero-Installs from working (to prevent this, set enableScripts to false).
+.yarn/unplugged
+.yarn/build-state.yml
+
+# .yarn/cache and .pnp.* may be safely ignored, but you'll need to run yarn install
+# to regenerate them between each branch switch.
+# Uncomment the following lines if you're not using Zero-Installs:
+# .yarn/cache
+# .pnp.*
+
+# End of https://www.toptal.com/developers/gitignore/api/yarn
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi vuejs >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/vuejs
+# Edit at https://www.toptal.com/developers/gitignore?templates=vuejs
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# End of https://www.toptal.com/developers/gitignore/api/vuejs
+############################################################################################################################################
+
+############################################################################################################################################
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi go >> .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/go
+# Edit at https://www.toptal.com/developers/gitignore?templates=go
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
+
+# End of https://www.toptal.com/developers/gitignore/api/go
+############################################################################################################################################
+
+############################################################################################################################################
+# Created by https://www.toptal.com/developers/gitignore/api/rust
+# Edit at https://www.toptal.com/developers/gitignore?templates=rust
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore
+# $ gi list | xargs -d',' -n1 echo
+# $ gi rust >> .gitignore
+
+### Rust ###
+# Generated by Cargo
+# will have compiled files and executables
+/target/
+
+# Remove Cargo.lock from gitignore if creating an executable, leave it for libraries
+# More information here https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
+Cargo.lock
+
+# These are backup files generated by rustfmt
+**/*.rs.bk
+
+# End of https://www.toptal.com/developers/gitignore/api/rust
+
+#######################################################################################################################
+# Dev Cargo #
+cargo-timing*.html
+# cargo-timing-20200823T084835Z.html
+#######################################################################################################################
+############################################################################################################################################
+
+amd-radeon-rx-5700-xt/
+rtx-3090/NVIDIA-Linux-x86_64-455.23.04.run
+
+!rtx-3090/**/*.log
+!amd-radeon-rx-5700-xt/**/*.log
+!logs/
+!logs/**/*.log

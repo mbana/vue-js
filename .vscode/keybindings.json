@@ -1,0 +1,117 @@
+// Place your key bindings in this file to override the defaultsauto[]
+// https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+// https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf
+[
+  // start: disable
+  {
+    "key": "ctrl+numpad_add",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+numpad_subtract",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  // end: disabled
+  {
+    "key": "shift+meta+up",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+alt+up",
+    "command": "-editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // ⇧⌥↓ / ⇧⌥↑ Copy line down/up
+  {
+    "key": "shift+meta+down",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // ⇧⌥↓ / ⇧⌥↑ Copy line down/up
+  {
+    "key": "ctrl+shift+alt+down",
+    "command": "-editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // ⌃- / ⌃⇧- Go back/forward
+  {
+    "key": "ctrl+numpad_subtract",
+    "command": "workbench.action.navigateBack"
+  },
+  // ⌃- / ⌃⇧- Go back/forward
+  {
+    "key": "shift+ctrl+numpad_subtract",
+    "command": "workbench.action.navigateForward"
+  },
+  // ⌘Home / End Scroll to top/bottom
+  // Home / End Go to beginning/end of line
+  // ⌘↑ / ⌘↓ Go to beginning/end of file
+  //     ⌥↓ / ⌥↑ Move line down/up
+  {
+    "key": "shift+ctrl+numpad_subtract",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "shift+meta+t",
+    "command": "editor.action.transformToTitlecase"
+  },
+  {
+    "key": "shift+meta+l",
+    "command": "editor.action.transformToLowercase"
+  },
+  {
+    "key": "shift+meta+u",
+    "command": "editor.action.transformToUppercase"
+  }
+]
+// Copied from Mac
+// // Place your key bindings in this file to overwrite the defaults
+// [
+//   {
+//     "key": "ctrl+shift+u",
+//     "command": "editor.action.transformToUppercase"
+//   },
+//   {
+//     "key": "ctrl+shift+l",
+//     "command": "editor.action.transformToLowercase"
+//   },
+//   {
+//     "key": "ctrl+shift+f3",
+//     "command": "workbench.action.compareEditor.previousChange"
+//   },
+//   {
+//     "key": "ctrl+f3",
+//     "command": "workbench.action.compareEditor.nextChange"
+//   },
+//   {
+//     "key": "cmd+r",
+//     "command": "workbench.files.action.showActiveFileInExplorer"
+//   },
+//   {
+//     "key": "cmd+t cmd+f",
+//     "command": "go.test.file"
+//   },
+//   {
+//     "key": "ctrl+`",
+//     "command": "workbench.action.focusActiveEditorGroup",
+//     "when": "terminalFocus"
+//   },
+//   {
+//     "key": "ctrl+`",
+//     "command": "workbench.action.terminal.focus",
+//     "when": "!terminalFocus"
+//   },
+// ]
